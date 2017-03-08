@@ -1,0 +1,68 @@
+.work-inthegrater {
+
+  .hero {
+    background-image: url('/img/work-integrated-main-large.jpg');
+  }
+
+  .sub {
+    font-size: 24px;
+  }
+
+
+
+  .section-1 {
+
+    .tags {
+      left: -416px;
+      top: 1400px;
+    }
+
+    p.intro {
+      margin-left: -496px;
+      width: 528px;
+    }
+
+    p.gestures {
+      position: absolute;
+      left: 292px;
+      top: 972px;
+      width: 320px;
+    }
+
+    // diamond
+    figure:nth-of-type(1) {
+      margin-left: -565px;
+      margin-top: 22px;
+      width: 790px;
+    }
+
+    // waves
+    figure:nth-of-type(2) {
+      margin-left: -122px;
+      margin-top: -30px;
+      width: 678px;
+    }
+
+    // setup
+    figure:nth-of-type(3) {
+      margin-left: -540px;
+      margin-top: -14px;
+      width: 770px;
+      z-index: 5;
+    }
+
+    // triangles animated
+    figure:nth-of-type(4) {
+      margin-left: -290px;
+      margin-top: -18px;
+      width: 835px;
+    }
+
+    // stripes
+    figure:nth-of-type(5) {
+      margin-left: -405px;
+      margin-top: -10px;
+      width: 732px;
+    }
+  }
+}

@@ -52,10 +52,14 @@ header {
 figure, .video {
   filter: grayscale(100%);
   transition: filter 0.3s ease-in-out;
+  transform: translateZ(0);
 
   img {
-    cursor: pointer;
     display: block;
+  }
+
+  img[overlay] {
+    cursor: pointer;
   }
 
   &:hover {

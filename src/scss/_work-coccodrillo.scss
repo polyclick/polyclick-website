@@ -1,0 +1,88 @@
+.work-coccodrillo {
+
+  .hero {
+    background-image: url('/img/work-coccodrillo-main-large.jpg');
+  }
+
+  .sub {
+    font-size: 18px;
+  }
+
+
+
+  .section-1 {
+    p.intro {
+      margin-left: -402px;
+      width: 518px;
+    }
+
+    // front
+    figure:nth-of-type(1) {
+      margin-left: -196px;
+      margin-top: 22px;
+      width: 748px;
+    }
+
+    // page1
+    figure:nth-of-type(2) {
+      margin-left: -562px;
+      margin-top: -20px;
+      width: 796px;
+    }
+
+    // page2
+    figure:nth-of-type(3) {
+      margin-left: -210px;
+      margin-top: -38px;
+      width: 625px;
+    }
+  }
+
+
+
+  .section-2 {
+
+    .tags {
+      left: 106px;
+      top: 46px;
+    }
+
+    // page3
+    figure:nth-of-type(1) {
+      margin-left: -552px;
+      width: 702px;
+    }
+
+    // page4
+    figure:nth-of-type(2) {
+      margin-left: -225px;
+      margin-top: -28px;
+      width: 806px;
+    }
+  }
+
+
+
+  .section-3 {
+
+    p.credits {
+      position: absolute;
+      left: 315px;
+      top: 202px;
+      width: 208px;
+    }
+
+    // page5
+    figure:nth-of-type(1) {
+      margin-left: -572px;
+      width: 755px;
+    }
+
+    // back
+    figure:nth-of-type(2) {
+      margin-left: -262px;
+      margin-top: -46px;
+      width: 726px;
+    }
+  }
+}

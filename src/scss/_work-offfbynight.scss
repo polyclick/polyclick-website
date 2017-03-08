@@ -11,7 +11,7 @@
 
 
   .section-1 {
-    p {
+    p.intro {
       margin-left: -450px;
       width: 525px;
     }
@@ -29,21 +29,21 @@
     }
 
     // scape2 animated
-    .animation {
+    figure:nth-of-type(2) {
       margin-left: -225px;
       margin-top: -65px;
       width: 740px;
     }
 
     // scape3
-    figure:nth-of-type(2) {
+    figure:nth-of-type(3) {
       margin-left: -560px;
       margin-top: -52px;
       width: 768px;
     }
 
     // scape4
-    figure:nth-of-type(3) {
+    figure:nth-of-type(4) {
       margin-left: -168px;
       margin-top: -48px;
       width: 750px;
