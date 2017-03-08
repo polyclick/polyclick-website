@@ -64,12 +64,19 @@
     }
 
     // shadow under images & video
-    figure, .video {
+    figure, .video, .animation {
       box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.3);
       position: relative;
 
       @include sm-desktop {
         box-shadow: none;
+      }
+    }
+
+    // max sure images are 100% width of container
+    figure, .animation {
+      img {
+        width: 100%;
       }
     }
 

@@ -55,8 +55,8 @@
       top: 48px;
     }
 
-    // setup
-    figure:nth-of-type(1) {
+    // setup animated
+    .animation {
       margin-left: -110px;
       width: 728px;
     }
@@ -93,7 +93,7 @@
     }
 
     // notebook animated
-    figure:nth-of-type(2) {
+    .animation {
       margin-left: -94px;
       margin-top: -20px;
       width: 690px;
