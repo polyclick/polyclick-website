@@ -13,3 +13,4 @@ docs
 
 # Generated build.
 dist
+.DS_Store

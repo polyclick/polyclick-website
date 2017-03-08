@@ -1,0 +1,21 @@
+$tablet-width: 768px;
+$desktop-width: 1024px;
+$hires-width: 1920px;
+
+@mixin sm-tablet {
+  @media (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin sm-desktop {
+  @media (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin gt-hires {
+  @media (min-width: #{$hires-width}) {
+    @content;
+  }
+}

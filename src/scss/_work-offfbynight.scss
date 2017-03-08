@@ -1,0 +1,115 @@
+.work-offfbynight {
+
+  .hero {
+    background-image: url('/img/work-offf-main-large.jpg');
+  }
+
+  .sub {
+    font-size: 16.5px;
+  }
+
+  .section-1 {
+    p {
+      margin-left: -490px;
+      width: 515px;
+    }
+
+    .tags {
+      left: 476px;
+      top: 404px;
+    }
+
+    // scape1
+    figure:nth-of-type(1) {
+      margin-left: -534px;
+      margin-top: 20px;
+      width: 720px;
+    }
+
+    // scape2
+    figure:nth-of-type(2) {
+      margin-left: -168px;
+      margin-top: -94px;
+      width: 675px;
+    }
+
+    // scape3
+    figure:nth-of-type(3) {
+      margin-left: -614px;
+      margin-top: -75px;
+      width: 725px;
+    }
+
+    // scape4
+    figure:nth-of-type(4) {
+      margin-left: -125px;
+      margin-top: -92px;
+      width: 700px;
+    }
+  }
+
+  .section-2 {
+
+    p.technical {
+      margin-left: 230px;
+      margin-top: -415px;
+      width: 305px;
+    }
+
+    p.gradient {
+      margin-left: -588px;
+      margin-top: 80px;
+      width: 318px;
+    }
+
+    // colors1
+    figure:nth-of-type(1) {
+      margin-left: -605px;
+      width: 782px;
+    }
+
+    // colors2
+    figure:nth-of-type(2) {
+      margin-left: -110px;
+      margin-top: 314px;
+      width: 695px;
+    }
+
+    // colors3
+    figure:nth-of-type(3) {
+      margin-left: -468px;
+      margin-top: -52px;
+      width: 648px;
+    }
+
+    // colors4
+    figure:nth-of-type(4) {
+      margin-left: -220px;
+      margin-top: -170px;
+      width: 754px;
+    }
+  }
+
+  .section-3 {
+
+    p.credits {
+      margin-left: -445px;
+      margin-top: -60px;
+      width: 285px;
+    }
+
+    // glitch1
+    figure:nth-of-type(1) {
+      margin-left: -472px;
+      width: 782px;
+    }
+
+    // glitch2
+    figure:nth-of-type(2) {
+      margin-left: -126px;
+      margin-top: -65px;
+      width: 592px;
+    }
+
+  }
+}

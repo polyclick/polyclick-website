@@ -7,6 +7,7 @@ var gulp = require('gulp'),
 gulp.task('connect', function () {
   connect.server({
     root: global.paths.src,
-    livereload: true
+    livereload: true,
+    fallback: global.paths.src + '/index.html'
   });
 });

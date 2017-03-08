@@ -1,0 +1,100 @@
+$font-size-normal: 13px;
+$line-height-normal: 20px;
+
+body {
+  background-color: $bg-color;
+  color: $text-color;
+  font-family: 'Cousine', monospace;
+  font-size: $font-size-normal;
+  line-height: 1;
+  overflow-x: hidden;
+
+  &.loading {
+    * {
+      cursor: wait !important;
+    }
+  }
+
+  &.overlay-shown {
+    overflow: hidden;
+  }
+}
+
+a {
+  color: $text-color;
+  text-decoration: none;
+}
+
+// use this class to make the fonts render thinner than regular
+// can also be used to optimize font rendering
+.thin {
+  -webkit-font-smoothing: antialiased !important;
+  text-rendering: optimizeLegibility !important;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.002);
+}
+
+.wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+header {
+  margin-top: 50px;
+  position: relative;
+
+  .name {
+    font-size: 40px;
+  }
+}
+
+
+
+figure, .video {
+  filter: grayscale(100%);
+  transition: filter 0.3s ease-in-out;
+
+  img {
+    cursor: pointer;
+  }
+
+  &:hover {
+    filter: grayscale(0%);
+
+    figcaption {
+      opacity: 1;
+    }
+  }
+
+  // disable grayscale filter animation on smaller screens
+  @include sm-desktop {
+    filter: none;
+  }
+}
+
+figcaption {
+  margin-top: 6.5px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+
+  .left {
+    display: inline-block;
+  }
+
+  .right {
+    float: right;
+  }
+}
+
+.overlay {
+  background-color: $bg-color;
+  background-size: cover;
+  cursor: crosshair;
+  visibility: hidden;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transform: translateZ(0);
+}

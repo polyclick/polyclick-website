@@ -1,0 +1,28 @@
+.navigable-page {
+  .wrap {
+    @include sm-desktop {
+      width: 90%;
+    }
+  }
+
+  header {
+    margin-bottom: 60px;
+  }
+
+  nav {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    a {
+      cursor: pointer;
+      display: inline-block;
+      line-height: 45px;
+      margin: 0 30px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

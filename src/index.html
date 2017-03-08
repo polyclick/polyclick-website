@@ -1,15 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
-    <title>ES6 + JSPM + Gulp</title>
-    <link rel="stylesheet" href="css/app.css" charset="utf-8">
-</head>
-<body>
-    <h1>Hello JSPM!</h1>
+
+    <title>polyclick</title>
+
+    <link rel="stylesheet" href="/css/app.css" charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Cousine:400,700" rel="stylesheet">
+
+    <base href="/" >
+  </head>
+  <body>
+
+    <!-- main content container -->
+    <main></main>
+
+    <!-- overlay container -->
+    <div class="overlay"></div>
+
+
+
+    <!-- template: navigable page -->
+    <script id="navigable-page-template" type="text">
+      <div class="wrap">
+        <header>
+          <a href="/">
+            <div class="name">polyclick</div>
+          </a>
+          <nav>
+            <a href="/">work</a>
+            <a href="/what">what</a>
+            <a href="/contact">contact</a>
+          </nav>
+        </header>
+        <div id="content"></div>
+      </div>
+    </script>
+
+    <!-- template: hero page -->
+    <script id="hero-page-template" type="text">
+      <div>
+        <div id="content"></div>
+      </div>
+    </script>
+
+
+
+    <!-- work: overview -->
+    <script id="work-overview" type="text" template="navigable-page-template">
+      <a href="work/solitude">
+        <figure>
+          <img src="img/work-solitude-main.jpg" alt="solitude"/>
+          <figcaption>
+            <div class="left">#solitude</div>
+            <div class="right">interactive installation</div>
+          </figcaption>
+        </figure>
+      </a>
+
+      <a href="work/offfbynight">
+        <figure>
+          <img src="img/work-offf-main.jpg" alt="offf"/>
+          <figcaption>
+            <div class="left">#offfbynight</div>
+            <div class="right">research &amp; development</div>
+          </figcaption>
+        </figure>
+      </a>
+    </script>
+
+    <!-- what page -->
+    <script id="what" type="text" template="navigable-page-template">
+      Yukes
+    </script>
+
+
+
+
+    <!-- work: solitude detail -->
+    <script id="work-solitude" type="text" template="hero-page-template">
+      <div class="hero"></div>
+      <div class="wrap">
+        <header>
+          <div class="name">#solitude</div>
+          <div class="sub thin">interactive installation</div>
+        </header>
+        <div class="centerer">
+          <section class="section-1">
+            <p class="intro">
+              Solitude is an interactive art installation which criticizes the
+              rat race that surrounds us all. Forced by high expectations and
+              surrounded by intense impulses we get torn apart between lonely
+              emptiness and uneasy voids.
+            </p>
+            <ul class="tags thin">
+              <li>#openframeworks</li>
+              <li>#arduino </li>
+              <li>#madmapper</li>
+              <li>#ableton</li>
+              <li>#dmx</li>
+            </ul>
+            <figure><img src="img/work-solitude-matt.jpg" alt="solitude" overlay="img/work-solitude-matt-large.jpg" /></figure>
+            <figure><img src="img/work-solitude-look.jpg" alt="solitude" overlay="img/work-solitude-look-large.jpg" /></figure>
+            <figure><img src="img/work-solitude-experience.jpg" alt="solitude" overlay="img/work-solitude-experience-large.jpg" /></figure>
+          </section>
+          <section class="section-2">
+            <p class="technical right">
+              From a technical point of view the installation
+              consists of six led tubes and a pressure sensitive
+              floor. When people walk through the installation,
+              pressure sensitive pads get triggered. Then, an
+              #arduino communicated the location of the visitor to
+              an #openframeworks application. These ones &amp; zeroes
+              then got sent over to an #ableton #max plugin. The
+              plugin then manipulated the background audio through
+              different audio filters. At the same time, the
+              #openframeworks app altered the animation sequences on
+              the tubes, so both our eyes and ears got stimulated.
+            </p>
+            <figure><img src="img/work-solitude-setup.jpg" alt="solitude" overlay="img/work-solitude-setup-large.jpg"/></figure>
+            <div class="video"><iframe src="https://player.vimeo.com/video/162837848?title=0&byline=0&portrait=0" width="810" height="456" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
+          </section>
+          <section class="section-3">
+            <p class="soundscape">
+              The soundscape was mixed together from a list of
+              mysterious, glitchy, experimental music tracks.
+              Some featured artists were: Monolake, Senking,
+              Kanding Ray, alva noto, &amp; Gricha Lichtenberger.<br/>
+              <br/>
+              Listen
+            </p>
+            <figure><img src="img/work-solitude-notebook.jpg" alt="solitude" overlay="img/work-solitude-notebook-large.jpg"/></figure>
+            <figure><img src="img/work-solitude-notebook.jpg" alt="solitude" overlay="img/work-solitude-notebook-large.jpg"/></figure>
+            <p class="credits">
+              Credits<br/>
+              <br/>
+              Curator: KOP VZW<br/>
+              Concept: Nacht Collectief<br/>
+              Production: TAAI<br/>
+              Soundscape: polyclick<br/>
+              Photos: Matthias Hannes, polyclick
+            </p>
+          </section>
+        </div>
+      </div>
+    </script>
+
+    <!-- work: offfbynight detail -->
+    <script id="work-offfbynight" type="text" template="hero-page-template">
+      <div class="hero"></div>
+      <div class="wrap">
+        <header>
+          <div class="name">#offfbynight</div>
+          <div class="sub thin">splash page research &amp; development</div>
+        </header>
+        <div class="centerer">
+          <section class="section-1">
+            <ul class="tags thin">
+              <li>#webgl</li>
+              <li>#shaders</li>
+              <li>#threejs</li>
+              <li>#cinema4d</li>
+              <li>#glsl</li>
+            </ul>
+            <p>A collection of realtime generated visuals in the browser. These sketches are built with bleeding edge web technologies like #webgl and #glsl. This research project is commissioned by the sexy web agency: Mr Henry, Antwerp. Art and colors are loosely inspired on the movie Bladerunner.</p>
+            <figure><img src="img/work-offf-scape1.jpg" alt="offf by night" overlay="img/work-offf-scape1-large.jpg" /></figure>
+            <figure><img src="img/work-offf-scape2.jpg" alt="offf by night" overlay="img/work-offf-scape2-large.jpg" /></figure>
+            <figure><img src="img/work-offf-scape3.jpg" alt="offf by night" overlay="img/work-offf-scape3-large.jpg" /></figure>
+            <figure><img src="img/work-offf-scape4.jpg" alt="offf by night" overlay="img/work-offf-scape4-large.jpg" /></figure>
+          </section>
+          <section class="section-2">
+            <figure><img src="img/work-offf-colors1.jpg" alt="offf by night" overlay="img/work-offf-colors1-large.jpg" /></figure>
+            <p class="technical right">All scenes are built in the three.js framework and rendered to a WebGL backed canvas element.</p>
+            <figure><img src="img/work-offf-colors2.jpg" alt="offf by night" overlay="img/work-offf-colors2-large.jpg" /></figure>
+            <figure><img src="img/work-offf-colors3.jpg" alt="offf by night" overlay="img/work-offf-colors3-large.jpg" /></figure>
+            <p class="gradient">A multilayer blur shader that obscures primitive shapes and turns them into an animating fluid multicolor gradient.</p>
+            <figure><img src="img/work-offf-colors4.jpg" alt="offf by night" overlay="img/work-offf-colors4-large.jpg" /></figure>
+          </section>
+          <section class="section-3">
+            <figure><img src="img/work-offf-glitch1.jpg" alt="offf by night" overlay="img/work-offf-glitch1-large.jpg" /></figure>
+            <figure><img src="img/work-offf-glitch2.jpg" alt="offf by night" overlay="img/work-offf-glitch2-large.jpg" /></figure>
+            <p class="credits right">
+              Credits<br/><br/>
+              Commissioned By: Mr Henry<br/>
+              Research &amp; Dev: polyclick
+            </p>
+          </section>
+        </div>
+      </div>
+    </script>
+
+
 
     <script src="lib/system.js"></script>
     <script src="config.js"></script>
     <script>System.import('./js/app')</script>
-</body>
+  </body>
 </html>
