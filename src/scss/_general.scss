@@ -137,6 +137,11 @@ figcaption {
   .right {
     float: right;
   }
+
+  // always show captions on mobile
+  @include sm-desktop {
+    opacity: 1;
+  }
 }
 
 
@@ -268,15 +273,21 @@ footer {
 ///////////////////////////////////////////////////////////////////////////////
 
 .overlay {
-  background-color: $bg-color;
+  background-color: #000;
   background-size: cover;
   cursor: crosshair;
-  visibility: hidden;
   height: 100%;
   left: 0;
   position: fixed;
   top: 0;
+  transform: translateZ(0);
+  visibility: hidden;
   width: 100%;
   z-index: 1000;
-  transform: translateZ(0);
+
+  @include sm-desktop {
+    background-color: #000;
+    background-size: contain;
+    background-position: center center !important;
+  }
 }
