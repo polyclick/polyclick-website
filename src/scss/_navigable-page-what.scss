@@ -1,0 +1,109 @@
+.navigable-page.what {
+
+  section {
+    @include link-color(#000);
+
+    h1 {
+      @include sm-desktop {
+        display: none;
+      }
+    }
+  }
+
+  .section-1 {
+    padding-top: 90px;
+
+    // remove padding hack on smalle screens
+    @include sm-desktop {
+      padding-top: 0;
+    }
+
+    h1.gist-title {
+      position: absolute;
+      right: -240px;
+      top: 0px;
+      width: 200px;
+      z-index: 2;
+    }
+
+    p.gist-body {
+      position: absolute;
+      right: -200px;
+      top: 52px;
+      width: 565px;
+      z-index: 4;
+    }
+
+    figure:nth-of-type(1) {
+      margin-left: 148px;
+      width: 360px;
+      z-index: 0;
+    }
+  }
+
+
+  .section-2 {
+    width: 1000px;
+    margin-left: -500px;
+
+    &:after {
+      clear: both;
+      display: block;
+      content: ' ';
+    }
+
+    @include sm-desktop {
+      width: 100%;
+      margin-left: 0;
+    }
+
+    h1.statement-title {
+      margin-left: 0px;
+    }
+
+    p.statement-desc {
+      font-size: 17px;
+      line-height: 1.6;
+      width: 550px;
+      margin: 10px 0 45px 80px;
+      font-style: italic;
+    }
+
+    p {
+      margin: 30px 0;
+    }
+
+    @keyframes spin { 100% { transform:rotate(360deg); } }
+
+    img {
+      animation: spin 240s linear infinite;
+      border-radius: 50%;
+      float: left;
+      height: 500px;
+      margin: 35px;
+      shape-outside: circle();
+      width: 500px;
+      z-index: 4;
+
+      @include sm-desktop {
+        height: 250px;
+        width: 250px;
+      }
+
+      @include sm-tablet {
+        float: none;
+        width: auto;
+        height: auto;
+        margin: auto auto $marginquart auto;
+      }
+    }
+
+    ul {
+      color: #111;
+      left: 0px;
+      position: absolute;
+      top: 520px;
+    }
+  }
+
+}

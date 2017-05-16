@@ -1,0 +1,116 @@
+.hero-page.work-symbiosis {
+
+  .hero {
+    background-image: url('/img/work-symbiosis-main-large.jpg');
+  }
+
+  .sub {
+    font-size: 16px;
+  }
+
+  // link underline color
+  @include link-color(#f2e02e);
+
+
+
+  .section-1 {
+
+    p.intro {
+      margin-left: -532px;
+      width: 518px;
+    }
+
+    // clouds
+    figure:nth-of-type(1) {
+      margin-left: -575px;
+      margin-top: 22px;
+      width: 690px;
+      z-index: 2;
+    }
+
+    // space
+    figure:nth-of-type(2) {
+      margin-left: -194px;
+      margin-top: -68px;
+      width: 762px;
+    }
+
+    // rain
+    figure:nth-of-type(3) {
+      margin-left: -492px;
+      margin-top: -48px;
+      width: 692px;
+    }
+
+    // chaos
+    figure:nth-of-type(4) {
+      margin-left: -270px;
+      margin-top: -50px;
+      width: 918px;
+    }
+  }
+
+
+
+  .section-2 {
+
+    p.creativecode {
+      left: 208px;
+      position: absolute;
+      top: 46px;
+      width: 415px;
+    }
+
+    // circle
+    figure:nth-of-type(1) {
+      margin-left: -550px;
+      width: 692px;
+      z-index: 2;
+    }
+
+    // slash
+    figure:nth-of-type(2) {
+      margin-left: -136px;
+      margin-top: -105px;
+      width: 666px;
+    }
+  }
+
+
+
+  .section-3 {
+
+    .tags {
+      left: -384px;
+      top: 596px;
+    }
+
+    p.events {
+      left: 284px;
+      position: absolute;
+      top: 872px;
+      width: 368px;
+    }
+
+    // blob
+    figure:nth-of-type(1) {
+      margin-left: -498px;
+      width: 992px;
+      //z-index: 2;
+    }
+
+    // vortex
+    figure:nth-of-type(2) {
+      margin-left: -85px;
+      margin-top: -26px;
+      width: 700px;
+    }
+
+    // mountains
+    figure:nth-of-type(3) {
+      margin-left: -450px;
+      margin-top: -40px;
+      width: 645px;
+    }
+  }
+}

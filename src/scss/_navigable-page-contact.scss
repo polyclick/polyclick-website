@@ -1,0 +1,67 @@
+.navigable-page.contact {
+
+  // link color
+  section {
+    @include link-color(#bbb, 3px);
+
+    // less thick on smaller screens
+    @include sm-desktop {
+      @include link-color(#bbb, 2px);
+    }
+  }
+
+
+
+  // email and phone
+  .section-1 {
+    span {
+      display: block;
+      line-height: 1.6;
+      text-align: right;
+      word-wrap: break-word;
+
+      @include sm-desktop {
+        text-align: left;
+      }
+    }
+
+    .mail-link {
+      font-size: 50px;
+
+      @include sm-desktop {
+        font-size: 25px;
+      }
+    }
+
+    .phone {
+      font-size: 30px;
+
+      @include sm-desktop {
+        font-size: 15px;
+      }
+    }
+  }
+
+
+
+  // social links
+  .section-2 {
+    span {
+      display: block;
+      font-size: 25px;
+      line-height: 1.6;
+      margin-bottom: 5px;
+
+      @include sm-desktop {
+        font-size: 20px;
+      }
+    }
+  }
+
+
+
+  // hide social footer on contact page
+  & + footer {
+    display: none;
+  }
+}

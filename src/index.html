@@ -1,12 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
     <title>polyclick</title>
 
+    <meta property="og:url"           content="https://polyclick.io">
+    <meta property="og:type"          content="website">
+    <meta property="og:title"         content="polyclick — visual artist &amp; creative coder">
+    <meta property="og:description"   content="Visual artist &amp; creative coder attempting to connect the physical and digital world through interactive experiences, installation art and generative design.">
+    <meta property="og:site_name"     content="polyclick">
+
+    <meta name="twitter:card"         content="website" />
+    <meta name="twitter:site"         content="@polyclickkkkk" />
+    <meta name="twitter:creator"      content="@polyclickkkkk" />
+    <meta name="twitter:description"  content="Visual artist &amp; creative coder attempting to connect the physical and digital world through interactive experiences, installation art and generative design.">
+    <meta name="twitter:title"        content="polyclick — visual artist &amp; creative coder" />
+
     <link rel="stylesheet" href="/css/app.css" charset="utf-8">
-    <link href="https://fonts.googleapis.com/css?family=Cousine:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cousine:400,400i,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono:700" rel="stylesheet">
 
     <base href="/" >
   </head>
@@ -14,6 +28,16 @@
 
     <!-- main content container -->
     <main></main>
+
+    <!-- footer -->
+    <footer>
+      <div class="wrap">
+        <a href="https://twitter.com/polyclickkkkk" target="_blank">twitter</a> —
+        <a href="https://facebook.com/polyclick" target="_blank">facebook</a> —
+        <a href="https://instagram.com/polyclick/" target="_blank">instagram</a> —
+        <a href="/contact">more...</a>
+      </div>
+    </footer>
 
     <!-- overlay container -->
     <div class="overlay"></div>
@@ -29,7 +53,7 @@
           </a>
           <nav>
             <a href="/">work</a>
-            <a href="/what">what</a>
+            <a href="/what" id="what-nav">what</a>
             <a href="/contact">contact</a>
           </nav>
         </header>
@@ -78,6 +102,16 @@
         </figure>
       </a>
 
+      <a href="work/symbiosis">
+        <figure>
+          <img src="img/work-symbiosis-main.jpg" alt="symbiosis"/>
+          <figcaption>
+            <div class="left">#symbiosis</div>
+            <div class="right">openframeworks visual art tool</div>
+          </figcaption>
+        </figure>
+      </a>
+
       <a href="work/inthegrater">
         <figure>
           <img src="img/work-integrated-main.jpg" alt="inthegrater"/>
@@ -91,7 +125,82 @@
 
     <!-- what page -->
     <script id="what" type="text" template="navigable-page-template">
-      Yukes
+      <div class="centerer">
+        <section class="section-1">
+          <h1 class="right gist-title">The Gist</h1>
+          <p class="right gist-body">
+            Here's the gist for those in a hurry. Looking for a creative coder that knows how to build:
+            interactive experiences, 2D/3D web experiences, generative design, data visualizations,
+            installation art or audiovisual performaces? Then, look no further, pick up your phone,
+            call me or send me a text at +32 486 10 41 81; You can also message me on
+            <a href="https://twitter.com/polyclickkkkk" target="_blank">Twitter</a> or
+            <a href="https://facebook.com/polyclick" target="_blank">Facebook</a>.
+            Ow yeah, there's also a contact button here somewhere.
+          </p>
+          <figure><img src="img/what-gist.jpg" alt="gist" /></figure>
+        </section>
+        <section class="section-2">
+          <h1 class="statement-title">The Statement</h1>
+          <p class="statement-desc">
+            "Visual artist & creative coder attempting to connect the physical and digital world through
+            interactive experiences, installation art and generative design"
+          </p>
+          <img src="img/what-statement.jpg" alt="gist" />
+          <p class="visual-artist">
+            <u>visual artist:</u> all the stuff I make has some sort of visual impact; either originating
+            from a digital screen, projected onto a surface or occupying a space in the real world.
+            You name it, as long as it has an impact on the viewer's visual perception.
+          </p>
+          <p class="creative-coder">
+            <u>creative coder:</u> the core of my whole existence, I’ve been programming since I was 12.
+            Since then, I've been successful at keeping myself at the forefront of software development;
+            motivated by both my curiousity and constant need for self-improvement.
+          </p>
+          <p class="interactive-exp">
+            <u>interactive experiences:</u> covers all cases where the viewer can interact with the visual
+            experience. Most of my work is built for the web, using bleeding edge technologies like:
+            WebGL, WebVR, Canvas, Sockets, ...
+          </p>
+          <p class="installation-art">
+            <u>installation art:</u> art pieces that occupy a certain space in our real physical world.
+            Things you can touch, feel, hear. Either connected to, or manipulated through, a
+            predefined electrical system; think: Arduino's, Sensors, Motors, Computers, Midi Controllers, ...
+          </p>
+          <p class="generative-design">
+            <u>generative design:</u> I'd like to use the term generative art in the broad sense,
+            ranging from data visualizations, graphics programming to data-driven or rule-based design.
+            To keep it short: everything arty that has some sort of digital system or algorithm at its core.
+          </p>
+          <ul class="tags thin">
+            <li>#openframeworks</li>
+            <li>#arduino </li>
+            <li>#madmapper</li>
+            <li>#ableton</li>
+            <li>#dmx</li>
+          </ul>
+        </section>
+      </div>
+    </script>
+
+
+    <!-- contact page -->
+    <script id="contact" type="text" template="navigable-page-template">
+      <section class="section-1">
+        <p>
+          <span class="mail-link"><a href="mailto:hello@polyclick.io">hello@polyclick.io</a></span>
+          <span class="phone">+32 486 10 41 81</span>
+        </p>
+      </section>
+      <section class="section-2">
+        <p>
+          <span class="social-link"><a href="https://facebook.com/polyclick" target="_blank">#facebook</a></span>
+          <span class="social-link"><a href="https://twitter.com/polyclickkkkk" target="_blank">#twitter</a></span>
+          <span class="social-link"><a href="https://instagram.com/polyclick" target="_blank">#instagram</a></span>
+          <span class="social-link"><a href="https://github.com/polyclick" target="_blank">#github</a></span>
+          <span class="social-link"><a href="https://polyclick.tumblr.com/" target="_blank">#tumblr</a></span>
+          <span class="social-link"><a href="https://soundcloud.com/polyclick" target="_blank">#soundcloud</a></span>
+        </p>
+      </section>
     </script>
 
 
@@ -126,17 +235,16 @@
           </section>
           <section class="section-2">
             <p class="technical right">
-              From a technical point of view the installation
+              On the technical side of it, the installation
               consists of six led tubes and a pressure sensitive
               floor. When people walk through the installation,
-              pressure sensitive pads get triggered. Then, an
-              #arduino communicated the location of the visitor to
-              an #openframeworks application. These ones &amp; zeroes
-              then got sent over to an #ableton #max plugin. The
-              plugin then manipulated the background audio through
-              different audio filters. At the same time, the
-              #openframeworks app altered the animation sequences on
-              the tubes, so both our eyes and ears got stimulated.
+              the pressure sensitive pads get triggered. Then, an
+              Arduino powered circuit communicates the location of the visitor to
+              an OpenFrameworks application. These ones &amp; zeroes are then sent
+              to an Ableton Max plugin. The plugin then manipulates the background audio through
+              various audio filters. At the same time, the
+              OpenFrameworks app alteres the animation sequences on
+              the led tubes.
             </p>
             <figure><img src="img/work-solitude-setup.gif" alt="solitude" /></figure>
             <div class="video"><iframe src="https://player.vimeo.com/video/162837848?title=0&byline=0&portrait=0" width="810" height="456" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
@@ -145,21 +253,26 @@
             <p class="soundscape">
               The soundscape was mixed together from a list of
               mysterious, glitchy, experimental music tracks.
-              Some featured artists were: Monolake, Senking,
-              Kanding Ray, alva noto, &amp; Gricha Lichtenberger.<br/>
-              <br/>
-              Listen
+              Some featured artists are: <a href="https://soundcloud.com/monolake" target="_blank">Monolake</a>,
+              <a href="http://www.raster-media.net/artists/senking?c=5" target="_blank">Senking</a>,
+              <a href="https://soundcloud.com/kangding-ray" target="_blank">Kanding Ray</a>,
+              <a href="http://www.alvanoto.com/?a1=audio" target="_blank">alva noto</a>, &amp;
+              <a href="https://soundcloud.com/grischenka" target="_blank">Gricha Lichtenberger</a>.<br/>
+              <!--
+                <br/>
+                Listen
+              -->
             </p>
             <figure><img src="img/work-solitude-notebook.jpg" alt="solitude" overlay="img/work-solitude-notebook-large.jpg"/></figure>
             <figure><img src="img/work-solitude-animation.gif" alt="solitude" /></figure>
             <p class="credits">
               Credits<br/>
               <br/>
-              Curator: KOP VZW<br/>
-              Concept: Nacht Collectief<br/>
-              Production: TAAI<br/>
-              Soundscape: polyclick<br/>
-              Photos: Matthias Hannes, polyclick
+              Curator: <a href="http://kopvzw.be/" target="_blank">KOP VZW</a><br/>
+              Concept: <a href="http://nachtcollectief.be/" target="_blank">Nacht Collectief</a><br/>
+              Production: <a href="http://www.thaithomas.be/" target="_blank">TAAI</a><br/>
+              Soundscape: <a href="/">polyclick</a><br/>
+              Photos: <a href="http://www.mathiashannes.com/" target="_blank">Mathias Hannes</a>, <a href="/">polyclick</a>
             </p>
           </section>
         </div>
@@ -172,7 +285,7 @@
       <div class="wrap">
         <header>
           <div class="name">#offfbynight</div>
-          <div class="sub thin">splash page research &amp; development</div>
+          <div class="sub thin">experimental research &amp; development</div>
         </header>
         <div class="centerer">
           <section class="section-1">
@@ -184,11 +297,10 @@
               <li>#glsl</li>
             </ul>
             <p class="intro">
-              A collection of realtime generated visuals in the browser. These
-              sketches are built with bleeding edge web technology like #webgl
-              and #glsl. This research project is commissioned by the sexy web
-              agency: Mr Henry, Antwerp. Art and colors are loosely inspired on
-              the movie Blade Runner.
+              Research project for OFFF By Night. A collection of realtime generated visuals. Built for the web with bleeding edge tech like WebGL
+              and GLSL. This research project is commissioned by the sexy web
+              agency: <a href="http://mrhenry.be/" target="_blank">Mr Henry</a>, Antwerp. Art and colors are loosely inspired on
+              the movie <a href="https://vimeo.com/156078406" target="_blank">Blade Runner</a>.
             </p>
             <figure><img src="img/work-offf-scape1.jpg" alt="offf by night" overlay="img/work-offf-scape1-large.jpg" /></figure>
             <figure><img src="img/work-offf-scape2-animation.gif" alt="offf by night" /></figure>
@@ -199,16 +311,16 @@
             <p class="blurshader">
               A multilayer blur shader that obscures
               primitive shapes and turns them into an
-              animating fluid multicolor gradient.
+              animating fluid multi-color gradient.
             </p>
             <figure><img src="img/work-offf-colors3.jpg" alt="offf by night" overlay="img/work-offf-colors3-large.jpg" /></figure>
             <figure><img src="img/work-offf-colors4.jpg" alt="offf by night" overlay="img/work-offf-colors4-large.jpg" /></figure>
           </section>
           <section class="section-3">
             <p class="technical">
-              All scenes are built in the #three.js
-              framework and rendered to a #webgl
-              backed canvas element.
+              All scenes are built with the three.js
+              framework and rendered to a WebGL
+              backed canvas element. Some scenes contain custom written shaders.
             </p>
             <figure><img src="img/work-offf-colors2.jpg" alt="offf by night" overlay="img/work-offf-colors2-large.jpg" /></figure>
             <figure><img src="img/work-offf-colors1.jpg" alt="offf by night" overlay="img/work-offf-colors1-large.jpg" /></figure>
@@ -218,9 +330,9 @@
             <figure><img src="img/work-offf-glitch1-animation.gif" alt="offf by night" /></figure>
             <p class="credits right">
               Credits<br/><br/>
-              Production: Mr Henry<br/>
-              Development: polyclick<br/>
-              Inspiration: Blade Runner
+              Production: <a href="http://mrhenry.be/" target="_blank">Mr Henry</a><br/>
+              Development: <a href="/">polyclick</a><br/>
+              Inspiration: <a href="https://www.youtube.com/watch?v=EOSIj_AxxX0" target="_blank">Blade Runner</a>
             </p>
           </section>
         </div>
@@ -238,9 +350,9 @@
         <div class="centerer">
           <section class="section-1">
             <p class="intro">
-              In interactive, browsable online book built with 3D technology for
+              An interactive, browsable online book built with 3D technology for
               the browser. This project features a custom vertex shader to curl
-              the book pages realistically. Design &amp; concept by Mr Henry.
+              the book pages realistically. Design &amp; concept by <a href="http://mrhenry.be/" target="_blank">Mr Henry</a>.
             </p>
             <figure><img src="img/work-coccodrillo-front.jpg" alt="coccodrillo" overlay="img/work-coccodrillo-front-large.jpg" /></figure>
             <figure><img src="img/work-coccodrillo-page1.jpg" alt="coccodrillo" overlay="img/work-coccodrillo-page1-large.jpg" /></figure>
@@ -262,11 +374,66 @@
             <figure><img src="img/work-coccodrillo-back.jpg" alt="coccodrillo" overlay="img/work-coccodrillo-back-large.jpg" /></figure>
             <p class="credits">
               Credits<br/><br/>
-              Concept: Mr Henry<br/>
-              Design: Mr Henry<br/>
-              Development: polyclick<br/>
-              Model: REVOLVER
+              Concept: <a href="http://mrhenry.be/" target="_blank">Mr Henry</a><br/>
+              Design: <a href="http://mrhenry.be/" target="_blank">Mr Henry</a><br/>
+              Development: <a href="/">polyclick</a><br/>
+              Model: <a href="http://revolver.be/" target="_blank">REVOLVER</a>
             </p>
+          </section>
+        </div>
+      </div>
+    </script>
+
+    <!-- work: symbiosis detail -->
+    <script id="work-symbiosis" type="text" template="hero-page-template">
+      <div class="hero"></div>
+      <div class="wrap">
+        <header>
+          <div class="name">#symbiosis</div>
+          <div class="sub thin">openframeworks visual art tool</div>
+        </header>
+        <div class="centerer">
+          <section class="section-1">
+            <p class="intro">
+              Symbiosis is a multipurpose visual art tool written in c++ using
+              the amazing OpenFrameworks library. The software was field-tested on multiple occassions.
+              For example, it was used as a creative coding tool for a visual mapping at
+              the <a href="https://www.pukkelpop.be/" target="_blank">Pukkelpop</a> festival in Hasselt.
+            </p>
+            <figure><img src="img/work-symbiosis-clouds.jpg" alt="symbiosis" overlay="img/work-symbiosis-clouds-large.jpg" /></figure>
+            <figure><img src="img/work-symbiosis-space.jpg" alt="symbiosis" overlay="img/work-symbiosis-space-large.jpg" /></figure>
+            <figure><img src="img/work-symbiosis-rain.jpg" alt="symbiosis" overlay="img/work-symbiosis-rain-large.jpg" /></figure>
+            <figure><img src="img/work-symbiosis-chaos.jpg" alt="symbiosis" overlay="img/work-symbiosis-chaos-large.jpg" /></figure>
+          </section>
+          <section class="section-2">
+            <p class="creativecode">
+              As a creative coding toolkit, it allows for quick and easy adapation to fit
+              the context it needs to operate in. It serves best as a starter kit for
+              creative coding. Its visual output can be routed to any screen, projector,
+              output file, still frame or piped into another application over Syphon.
+            </p>
+            <figure><img src="img/work-symbiosis-circle.jpg" alt="symbiosis" overlay="img/work-symbiosis-circle-large.jpg" /></figure>
+            <figure><img src="img/work-symbiosis-slash.jpg" alt="symbiosis" overlay="img/work-symbiosis-slash-large.jpg" /></figure>
+          </section>
+          <section class="section-3">
+            <ul class="tags thin">
+              <li>#openframeworks</li>
+              <li>#audioanalysis</li>
+              <li>#shaders</li>
+              <li>#syphon</li>
+              <li>#midi</li>
+              <li>#osc</li>
+            </ul>
+            <p class="events">
+              This creative coding toolkit has been used on
+              several events, including the <a href="http://www.rsrecords.com/" target="_blank">R&amp;S Record Label</a>
+              Weekender at <a href="http://ampere-antwerp.com/" target="_blank">Ampère</a>; <a href="https://www.pukkelpop.be" target="_blank">Pukkelpop</a> festival in
+              Hasselt; <a href="http://www.nachtcollectief.be/" target="_blank">Nacht Collectief</a> A/V Showcase in
+              Brussels &amp; Antwerp.
+            </p>
+            <figure><img src="img/work-symbiosis-blob.jpg" alt="symbiosis" overlay="img/work-symbiosis-blob-large.jpg" /></figure>
+            <figure><img src="img/work-symbiosis-vortex.jpg" alt="symbiosis" overlay="img/work-symbiosis-vortex-large.jpg" /></figure>
+            <figure><img src="img/work-symbiosis-mountains.jpg" alt="symbiosis" overlay="img/work-symbiosis-mountains-large.jpg" /></figure>
           </section>
         </div>
       </div>
@@ -289,28 +456,36 @@
               <li>#glsl</li>
             </ul>
             <p class="intro">
-              Interactive installation built using web technologies presented at
-              the `#integrated conference afterparty` (#inthegrater), Antwerp. The
+              An interactive installation built using web technologies; presented at
+              the <a href="http://www.integratedconf.org/" target="_blank">Integrated</a> conference after-party: "In The Grater" at <a href="http://ampere-antwerp.com/" target="_blank">Ampère</a> Antwerp. The
               installation features four different hand gestures manipulating
-              four interactive scenes.
+              four hypnotizing interactive scenes.
             </p>
             <p class="gestures">
-              Gesture recognition was achieved using
-              a Leap motion. The raw input was sent
-              off to a computer displaying a #webgl
-              scene.
+              Gesture recognition was realized using
+              a Leap Motion. The raw input of the user's hand movements were sent
+              to a computer displaying an interactive WebGL scene.
             </p>
             <figure><img src="img/work-integrated-diamond.jpg" alt="inthegrater" overlay="img/work-integrated-diamond-large.jpg" /></figure>
             <figure><img src="img/work-integrated-waves.jpg" alt="inthegrater" overlay="img/work-integrated-waves-large.jpg" /></figure>
             <figure><img src="img/work-integrated-setup.jpg" alt="inthegrater" overlay="img/work-integrated-setup-large.jpg" /></figure>
-            <figure><img src="img/work-integrated-setup.jpg" alt="inthegrater" /></figure>
+            <figure><img src="img/work-integrated-triangles.gif" alt="inthegrater" /></figure>
             <figure><img src="img/work-integrated-stripes.jpg" alt="inthegrater" overlay="img/work-integrated-stripes-large.jpg" /></figure>
           </section>
         </div>
       </div>
     </script>
 
+    <!-- google analytics -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
+      ga('create', 'UA-62395110-1', 'auto');
+
+    </script>
 
     <script src="lib/system.js"></script>
     <script src="config.js"></script>

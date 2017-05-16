@@ -1,0 +1,9 @@
+.navigable-page.work-overview {
+  figure {
+    margin-bottom: $marginhalf;
+
+    @include sm-desktop {
+      margin-bottom: $marginquart;
+    }
+  }
+}

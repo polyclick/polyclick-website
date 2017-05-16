@@ -1,4 +1,4 @@
-.work-coccodrillo {
+.hero-page.work-coccodrillo {
 
   .hero {
     background-image: url('/img/work-coccodrillo-main-large.jpg');
@@ -7,6 +7,9 @@
   .sub {
     font-size: 18px;
   }
+
+  // link underline color
+  @include link-color(#625ecf);
 
 
 

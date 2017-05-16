@@ -1,4 +1,4 @@
-.work-offfbynight {
+.hero-page.work-offfbynight {
 
   .hero {
     background-image: url('/img/work-offf-main-large.jpg');
@@ -7,6 +7,9 @@
   .sub {
     font-size: 16.5px;
   }
+
+  // link underline color
+  @include link-color(#e8513c);
 
 
 

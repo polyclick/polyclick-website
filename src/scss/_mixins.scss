@@ -1,0 +1,11 @@
+@mixin link-color($color, $size:2px) {
+  a {
+    border-bottom: $size solid $color;
+
+    &:hover {
+      background-color: $color;
+      border-bottom: none;
+      color: #fff;
+    }
+  }
+}

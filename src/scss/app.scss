@@ -1,13 +1,18 @@
 @import 'reset';
 @import 'colors';
+@import 'mixins';
 @import 'mediaqueries';
 
 @import 'general';
 @import 'navigable-page';
 @import 'hero-page';
 
-@import 'work-overview';
-@import 'work-solitude';
-@import 'work-offfbynight';
-@import 'work-coccodrillo';
-@import 'work-inthegrater';
+@import 'navigable-page-overview';
+@import 'navigable-page-what';
+@import 'navigable-page-contact';
+
+@import 'hero-page-solitude';
+@import 'hero-page-offfbynight';
+@import 'hero-page-coccodrillo';
+@import 'hero-page-symbiosis';
+@import 'hero-page-inthegrater';

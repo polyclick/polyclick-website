@@ -7,6 +7,7 @@ import page from 'page'
 // variables
 
 
+
 // jquery elements
 const $body = $(`body`)
 const $overlay = $(`div.overlay`)
@@ -28,20 +29,28 @@ $(document).mousemove((event) => {
 // routes
 page('/', index)
 page('/what', what)
+page('/contact', contact)
 page('/work/:slug', work)
 page()
 
 function index() {
   loadPage(`work-overview`)
+  initNavigation()
 }
 
 function what() {
   loadPage(`what`)
+  initNavigation()
+}
+
+function contact() {
+  loadPage(`contact`)
+  initNavigation()
 }
 
 function work(ctx) {
   loadPage(`work-${ctx.params.slug}`)
-  enableOverlayLinks()
+  initOverlayLinks()
 }
 
 
@@ -61,16 +70,50 @@ function loadPage(id) {
     .removeClass()
     .addClass($page.attr(`template`).substring(0, $page.attr(`template`).indexOf(`-template`)))
     .addClass(id)
+
+  // scroll to top
+  window.scrollTo(0, 0)
+
+  // track
+  ga('set', 'page', id)
+  ga('send', 'pageview')
+}
+
+
+// init navigation stuff
+function initNavigation() {
+  const $what = $(`#what-nav`)
+  const whatWords = [`what`, `i`, `do`]
+
+  let whatAnimationInterval
+  let whatIndex = 0
+
+  // what i do animation
+  $what.mouseenter(() => {
+    whatIndex = 0
+    nextWhatWord()
+    whatAnimationInterval = setInterval(() => { nextWhatWord() }, 250)
+  })
+
+  $what.mouseleave(() => {
+    clearTimeout(whatAnimationInterval)
+    whatIndex = -1
+    nextWhatWord()
+  })
+
+  function nextWhatWord() {
+    whatIndex++
+    $what.html(whatWords[whatIndex % whatWords.length])
+  }
 }
 
 
 // functionality to open the overlay
-function enableOverlayLinks() {
+function initOverlayLinks() {
   const $links = $(`[overlay]`)
 
   // clickable items with overlay attr
   $links.on(`click`, (event) => {
-    console.log(`clicks`)
     const url = $(event.currentTarget).attr(`overlay`)
 
     // load image and wait, then show overlay
@@ -92,8 +135,12 @@ function showOverlay(url) {
   $body.addClass(`overlay-shown`)
   $overlay.css(`background-image`, `url(${url})`)
 
+  // animate
   TweenMax.to($overlay, 0, { autoAlpha: 0, scale: 1.2, force3D: true })
   TweenMax.to($overlay, 0.3, { autoAlpha: 1, scale: 1, force3D: true, ease: Circ.easeOut })
+
+  // track
+  ga('send', 'event', 'Overlay', 'open', url)
 }
 
 
@@ -101,5 +148,9 @@ function showOverlay(url) {
 function hideOverlay() {
   $body.removeClass(`overlay-shown`)
 
+  // animate out
   TweenMax.to($overlay, 0.2, { autoAlpha: 0, scale: 1.2, force3D: true, ease: Circ.easeIn })
+
+  // track
+  ga('send', 'event', 'Overlay', 'close')
 }

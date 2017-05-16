@@ -15,11 +15,11 @@ var sassOptions = {
 // Compile SASS with sourcemaps + livereload.
 gulp.task('sass', function () {
   gulp.src(global.paths.sass)
-    .pipe(sourcemaps.init())
+    //.pipe(sourcemaps.init())
     .pipe(sass(sassOptions).on('error', sass.logError))
     .pipe(concat('app.css'))
     .pipe(autoprefixer())
-    .pipe(sourcemaps.write('.'))
+    //.pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(global.paths.css))
     .pipe(connect.reload());
 });

@@ -1,5 +1,17 @@
 $font-size-normal: 13px;
-$line-height-normal: 20px;
+$font-size-header: 40px;
+
+$line-height-normal: 1.65;
+
+$margin: 220px;
+$marginhalf: 110px;
+$marginquart: 55px;
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+//// BODY & GENERAL STYLING
+///////////////////////////////////////////////////////////////////////////////
 
 body {
   background-color: $bg-color;
@@ -18,6 +30,19 @@ body {
   &.overlay-shown {
     overflow: hidden;
   }
+
+  // don't join the following two selectors
+  // will not work, browsers ignore whole line they meet something
+  // they can't parse
+  *::selection {
+    background: #000;
+    color: #fff;
+  }
+
+  *::-moz-selection {
+    background: #000;
+    color: #fff;
+  }
 }
 
 a {
@@ -33,10 +58,36 @@ a {
   text-shadow: 1px 1px 1px rgba(0,0,0,0.002);
 }
 
+
+
+///////////////////////////////////////////////////////////////////////////////
+//// WRAPPER & CENTERER
+///////////////////////////////////////////////////////////////////////////////
+
 .wrap {
   max-width: 1000px;
   margin: 0 auto;
 }
+
+
+// vertical centering container (used for offsetting section content)
+.centerer {
+  margin: 0 auto;
+  overflow: visible;
+  width: 1px;
+
+
+  // reset container width for smaller screens
+  @include sm-desktop {
+    width: 90%;
+  }
+}
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+//// DEFAULT ELEMENT STYLING
+///////////////////////////////////////////////////////////////////////////////
 
 header {
   margin-top: 50px;
@@ -46,8 +97,6 @@ header {
     font-size: 40px;
   }
 }
-
-
 
 figure, .video {
   filter: grayscale(100%);
@@ -89,6 +138,134 @@ figcaption {
     float: right;
   }
 }
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+//// SECTION STYLING
+///////////////////////////////////////////////////////////////////////////////
+
+section {
+  position: relative;
+  margin-bottom: $margin;
+  font-size: 0;
+  line-height: 0;
+
+  @include sm-desktop {
+    margin-bottom: 0px;
+  }
+
+  // reset margins for smaller screens
+  figure, p, .video, h1 {
+    @include sm-desktop {
+      left: auto !important;
+      right: auto !important;
+      margin: 0 0 $marginquart 0 !important;
+      position: relative !important;
+      top: auto !important;
+      width: 100% !important;
+    }
+  }
+
+  // shadow under images & video
+  figure, .video, .animation {
+    position: relative;
+  }
+
+  // max sure images are 100% width of container
+  figure, .animation {
+    img {
+      width: 100%;
+    }
+  }
+
+  // keep video 16:9 on responsive (mobile) screens
+  .video {
+    @include sm-desktop {
+      height: 0px;
+      padding-bottom: 56.25%;
+
+      iframe {
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+      }
+    }
+  }
+
+  // header styling
+  h1 {
+    font-family: 'Ubuntu Mono', monospace;
+    font-size: $font-size-header;
+    line-height: 1;
+    display: block;
+  }
+
+  // header with right alignment
+  h1.right {
+    text-align: right;
+
+    @include sm-desktop {
+      text-align: left;
+    }
+  }
+
+  // paragraph styling
+  p {
+    font-size: $font-size-normal;
+    line-height: $line-height-normal;
+  }
+
+  // paragraph with right alignment
+  p.right {
+    text-align: right;
+
+    @include sm-desktop {
+      text-align: left;
+    }
+  }
+}
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+//// TAG CLOUD
+///////////////////////////////////////////////////////////////////////////////
+
+ul.tags {
+  color: $tag-color;
+  font-size: 26px;
+  line-height: 32px;
+  position: absolute;
+  z-index: 100;
+
+  @include sm-desktop {
+    display: none;
+  }
+}
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+//// FOOTER
+///////////////////////////////////////////////////////////////////////////////
+
+footer {
+  color: #999;
+  margin-bottom: 55px;
+  text-align: center;
+
+  a {
+    color: #999;
+  }
+}
+
+
+///////////////////////////////////////////////////////////////////////////////
+//// OVERLAY
+///////////////////////////////////////////////////////////////////////////////
 
 .overlay {
   background-color: $bg-color;

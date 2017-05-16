@@ -5,8 +5,18 @@
     }
   }
 
+  .centerer {
+    @include sm-desktop {
+      width: 100%;
+    }
+  }
+
   header {
-    margin-bottom: 60px;
+    margin-bottom: $marginhalf;
+
+    @include sm-desktop {
+      margin-bottom: $marginquart;
+    }
   }
 
   nav {
@@ -22,6 +32,28 @@
 
       &:last-child {
         margin-right: 0;
+      }
+    }
+
+    #what-nav {
+      width: 38px;
+      text-align: center;
+    }
+  }
+
+  // small screen navigation
+  @media (max-width: 600px) {
+    nav {
+      position: relative;
+      top: auto;
+      left: auto;
+
+      a {
+        margin: 0 18px;
+
+        &:first-child {
+          margin-left: 4px;
+        }
       }
     }
   }

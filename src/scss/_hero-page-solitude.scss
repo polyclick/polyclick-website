@@ -1,4 +1,4 @@
-.work-solitude {
+.hero-page.work-solitude {
 
   .hero {
     background-image: url('/img/work-solitude-main-large.jpg');
@@ -7,6 +7,9 @@
   .sub {
     font-size: 18px;
   }
+
+  // link underline color
+  @include link-color(#6888d1);
 
 
 

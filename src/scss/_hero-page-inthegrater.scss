@@ -1,4 +1,4 @@
-.work-inthegrater {
+.hero-page.work-inthegrater {
 
   .hero {
     background-image: url('/img/work-integrated-main-large.jpg');
@@ -8,6 +8,8 @@
     font-size: 24px;
   }
 
+  // link underline color
+  @include link-color(#000000);
 
 
   .section-1 {
