@@ -1,11 +1,7 @@
 // libraries
 import $ from 'jquery'
-import TweenMax from 'gsap'
+import TweenLite from 'gsap'
 import page from 'page'
-
-
-// variables
-
 
 
 // jquery elements
@@ -22,8 +18,9 @@ $overlay.click(() => {
 // bg position move effect
 $(document).mousemove((event) => {
   const percentage = event.clientX / $(document).width()
-  TweenMax.to($overlay, 0.5, { backgroundPosition: `${percentage * 100}% 0px`, force3D: true, ease: Cubic.easeOut })
+  TweenLite.to($overlay, 0.5, { backgroundPosition: `${percentage * 100}% 0px`, force3D: true, ease: Cubic.easeOut })
 })
+
 
 
 // routes
@@ -31,26 +28,30 @@ page('/', index)
 page('/what', what)
 page('/contact', contact)
 page('/work/:slug', work)
-page()
+page()  // -> call page() to trigger root to be loaded first
 
 function index() {
   loadPage(`work-overview`)
   initNavigation()
+  initAnimations()
 }
 
 function what() {
   loadPage(`what`)
   initNavigation()
+  initAnimations()
 }
 
 function contact() {
   loadPage(`contact`)
   initNavigation()
+  initAnimations()
 }
 
 function work(ctx) {
   loadPage(`work-${ctx.params.slug}`)
   initOverlayLinks()
+  initAnimations()
 }
 
 
@@ -107,6 +108,10 @@ function initNavigation() {
   }
 }
 
+function initAnimations() {
+  TweenLite.to(`main > *`, 1, { opacity: 1 })
+}
+
 
 // functionality to open the overlay
 function initOverlayLinks() {
@@ -136,8 +141,8 @@ function showOverlay(url) {
   $overlay.css(`background-image`, `url(${url})`)
 
   // animate
-  TweenMax.to($overlay, 0, { autoAlpha: 0, scale: 1.2, force3D: true })
-  TweenMax.to($overlay, 0.3, { autoAlpha: 1, scale: 1, force3D: true, ease: Circ.easeOut })
+  TweenLite.to($overlay, 0, { autoAlpha: 0, scale: 1.2, force3D: true })
+  TweenLite.to($overlay, 0.3, { autoAlpha: 1, scale: 1, force3D: true, ease: Circ.easeOut })
 
   // track
   ga('send', 'event', 'Overlay', 'open', url)
@@ -149,7 +154,7 @@ function hideOverlay() {
   $body.removeClass(`overlay-shown`)
 
   // animate out
-  TweenMax.to($overlay, 0.2, { autoAlpha: 0, scale: 1.2, force3D: true, ease: Circ.easeIn })
+  TweenLite.to($overlay, 0.2, { autoAlpha: 0, scale: 1.2, force3D: true, ease: Circ.easeIn })
 
   // track
   ga('send', 'event', 'Overlay', 'close')
