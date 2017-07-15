@@ -153,6 +153,9 @@ System.config({
     "npm:inherits@2.0.1": {
       "util": "github:jspm/nodelibs-util@0.1.0"
     },
+    "npm:isarray@1.0.0": {
+      "systemjs-json": "github:systemjs/plugin-json@0.1.2"
+    },
     "npm:page@1.7.1": {
       "path-to-regexp": "npm:path-to-regexp@1.2.1",
       "process": "github:jspm/nodelibs-process@0.1.2"
