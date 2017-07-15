@@ -149,6 +149,7 @@ function initChallenge() {
 
   let templateSlots,
     templateSlotsLeft = 0,
+    textsDisplayed = 0,
     $template = null,
     $video = null,
     $output = $('<div class="centerer"></div>')
@@ -168,19 +169,24 @@ function initChallenge() {
 
         templateSlots = parseInt($template.attr(`slots`))
         templateSlotsLeft = templateSlots
+
+        // put text in template
+        if($template.attr(`has-text`) === `true` && data.paragraphs.length > textsDisplayed) {
+          $output.find(`section`).last().find(`p`).html(data.paragraphs[textsDisplayed])
+          textsDisplayed++
+        }
       }
 
       // update video element
       $video = $output.find(`section`).last().find(`.video:nth-of-type(${(templateSlots - templateSlotsLeft) + 1})`)
       $video.css(`display`, `block`)
-      $video.find(`iframe`).attr(`src`, `https://www.youtube.com/embed/BT5HLiStabQ?rel=0&amp;controls=0&amp;showinfo=0`)
+      $video.find(`iframe`).attr(`src`, `https://www.youtube.com/embed/${trackInfo.embed}?rel=0&amp;controls=0&amp;showinfo=0`)
 
       // lower available slots in current section
       templateSlotsLeft--
     }
 
     // add output to dom
-    console.log($output)
     $(`body main div.centerer`).replaceWith($output)
   })
 }
