@@ -1,0 +1,103 @@
+.hero-page.challenge-zerotohero {
+
+  .hero {
+    background-image: url('/img/work-offf-main-large.jpg');
+  }
+
+  .sub {
+    font-size: 16.5px;
+  }
+
+  // link underline color
+  @include link-color(#63ff9f);
+
+  .video {
+    display: none;
+  }
+
+  .section-template-1 {
+    p {
+      margin-left: -450px;
+      width: 525px;
+    }
+
+    .video:nth-of-type(1) {
+      margin-left: -494px;
+      margin-top: 22px;
+      width: 724px;
+    }
+
+    .video:nth-of-type(2) {
+      margin-left: -225px;
+      margin-top: -65px;
+      width: 740px;
+    }
+
+    .video:nth-of-type(3) {
+      margin-left: -560px;
+      margin-top: -52px;
+      width: 768px;
+    }
+
+    .video:nth-of-type(4) {
+      margin-left: -168px;
+      margin-top: -48px;
+      width: 750px;
+    }
+  }
+
+
+
+  .section-template-2 {
+
+    p {
+      left: -534px;
+      position: absolute;
+      top: 482px;
+      width: 318px;
+    }
+
+    .video:nth-of-type(1) {
+      margin-left: -468px;
+      width: 766px;
+      z-index: 2;
+    }
+
+    .video:nth-of-type(2) {
+      margin-left: -80px;
+      margin-top: -38px;
+      width: 614px;
+    }
+  }
+
+
+
+  .section-template-3 {
+
+    p {
+      left: 242px;
+      position: absolute;
+      top: 38px;
+      width: 296px;
+    }
+
+    .video:nth-of-type(1) {
+      margin-left: -488px;
+      width: 678px;
+    }
+
+    .video:nth-of-type(2) {
+      margin-left: -164px;
+      margin-top: -38px;
+      width: 752px;
+      z-index: 2;
+    }
+
+    .video:nth-of-type(3) {
+      margin-left: -560px;
+      margin-top: -50px;
+      width: 824px;
+    }
+  }
+
+}

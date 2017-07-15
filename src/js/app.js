@@ -28,6 +28,7 @@ page('/', index)
 page('/what', what)
 page('/contact', contact)
 page('/work/:slug', work)
+page('/challenge/:slug', challenge)
 page()  // -> call page() to trigger root to be loaded first
 
 function index() {
@@ -50,6 +51,13 @@ function contact() {
 
 function work(ctx) {
   loadPage(`work-${ctx.params.slug}`)
+  initOverlayLinks()
+  initAnimations()
+}
+
+function challenge(ctx) {
+  loadPage(`challenge-${ctx.params.slug}`)
+  initChallenge()
   initOverlayLinks()
   initAnimations()
 }
@@ -134,6 +142,48 @@ function initOverlayLinks() {
   })
 }
 
+function initChallenge() {
+
+  // get section templates & randomize order
+  const templates = $('script.challenge-zerotohero-section-templates')
+
+  let templateSlots,
+    templateSlotsLeft = 0,
+    $template = null,
+    $video = null,
+    $output = $('<div class="centerer"></div>')
+
+  // load challenge status file
+  $.getJSON('/data/challenge-zerotohero.json', (data) => {
+    console.log(data.tracks.length + ' tracks')
+
+    // loop over each track
+    for(let i = 0; i < data.tracks.length; i++) {
+      const trackInfo = data.tracks[i]
+
+      // take new template if there are no slots available
+      if(!templateSlotsLeft) {
+        $template = $(templates[!i ? 0 : Math.floor(Math.random() * templates.length)])
+        $output.append($template.html())
+
+        templateSlots = parseInt($template.attr(`slots`))
+        templateSlotsLeft = templateSlots
+      }
+
+      // update video element
+      $video = $output.find(`section`).last().find(`.video:nth-of-type(${(templateSlots - templateSlotsLeft) + 1})`)
+      $video.css(`display`, `block`)
+      $video.find(`iframe`).attr(`src`, `https://www.youtube.com/embed/BT5HLiStabQ?rel=0&amp;controls=0&amp;showinfo=0`)
+
+      // lower available slots in current section
+      templateSlotsLeft--
+    }
+
+    // add output to dom
+    console.log($output)
+    $(`body main div.centerer`).replaceWith($output)
+  })
+}
 
 // show the overlay, animated
 function showOverlay(url) {
