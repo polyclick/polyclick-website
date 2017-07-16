@@ -152,6 +152,7 @@ function initChallenge() {
     textsDisplayed = 0,
     $template = null,
     $video = null,
+    $number = null,
     $output = $('<div class="centerer"></div>')
 
   // load challenge status file
@@ -160,10 +161,11 @@ function initChallenge() {
     // loop over each track
     for(let i = 0; i < data.tracks.length; i++) {
       const trackInfo = data.tracks[i]
+      const trackNumber = data.tracks.length - i
 
       // take new template if there are no slots available
       if(!templateSlotsLeft) {
-        $template = $(templates[!i ? 0 : Math.floor(Math.random() * templates.length)])
+        $template = $(templates[Math.floor(Math.random() * templates.length)])
         $output.append($template.html())
 
         templateSlots = parseInt($template.attr(`slots`))
@@ -171,7 +173,7 @@ function initChallenge() {
 
         // put text in template
         if($template.attr(`has-text`) === `true` && data.paragraphs.length > textsDisplayed) {
-          $output.find(`section`).last().find(`p`).html(data.paragraphs[textsDisplayed])
+          $output.find(`section`).last().find(`p:first-child`).html(data.paragraphs[textsDisplayed])
           textsDisplayed++
         }
       }
@@ -180,6 +182,11 @@ function initChallenge() {
       $video = $output.find(`section`).last().find(`.video:nth-of-type(${(templateSlots - templateSlotsLeft) + 1})`)
       $video.css(`display`, `block`)
       $video.find(`iframe`).attr(`src`, `https://www.youtube.com/embed/${trackInfo.embed}?rel=0&amp;controls=0&amp;showinfo=0`)
+
+      // update video number
+      $number = $output.find(`section`).last().find(`h1:nth-of-type(${(templateSlots - templateSlotsLeft) + 1})`)
+      $number.css(`display`, `block`)
+      $number.html(`#${(`00000` + trackNumber).slice(-3)}`)
 
       // lower available slots in current section
       templateSlotsLeft--
