@@ -1,7 +1,7 @@
 .hero-page.challenge-zerotohero {
 
   .hero {
-    background-image: url('/img/work-offf-main-large.jpg');
+    background-image: url('/img/challenge-zerotohero-main-large.jpg');
   }
 
   .sub {
@@ -9,7 +9,7 @@
   }
 
   // link underline color
-  @include link-color(#63ff9f);
+  @include link-color(#602b9e);
 
   .video {
     display: none;

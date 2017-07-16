@@ -156,7 +156,6 @@ function initChallenge() {
 
   // load challenge status file
   $.getJSON('/data/challenge-zerotohero.json', (data) => {
-    console.log(data.tracks.length + ' tracks')
 
     // loop over each track
     for(let i = 0; i < data.tracks.length; i++) {

@@ -106,4 +106,27 @@
     }
   }
 
+
+  .section-3 {
+    width: 1000px;
+    margin-left: -500px;
+
+    @include sm-desktop {
+      width: 100%;
+      margin-left: 0;
+    }
+
+    h1.random-title {
+      margin-right: 175px;
+      text-align: right;
+    }
+
+    p.current-challenge {
+      position: relative;
+      right: -175px;
+      width: 700px;
+      top: 14px;
+    }
+  }
+
 }
